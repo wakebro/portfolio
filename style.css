@@ -14,6 +14,10 @@
   --color-yellow: #fff7d1;
   --color-orange: #feb546;
   --color-black: #000000;
+  --color-begie: #ffe5ba;
+  --color-light-begie: #ffe5ba;
+  --color-dark-begie: #cbb38a;
+  --color-begie-font: #ffffed;
 
   /* Font size */
   --font-large: 48px;
@@ -47,7 +51,7 @@ body {
 
 a {
   text-decoration: none;
-  color: var(--color-white);
+  color: var(--color-dark-begie);
 }
 
 ul {
@@ -94,9 +98,9 @@ p {
 #navbar {
   display: flex;
   justify-content: space-between;
-  background-color: var(--color-pink);
+  background-color: var(--color-begie);
   align-items: center;
-  color: var(--color-white);
+  color: var(--color-dark-begie);
   padding: 16px;
 }
 
@@ -127,11 +131,12 @@ p {
 
 .nabar__menu__item.active {
   box-sizing: content-box;
-  border: 1px solid var(--color-white);
+  border: 1px solid var(--color-dark-begie);
 }
 
 .nabar__menu__item:hover {
-  background-color: var(--color-dark-pink);
+  background-color: var(--color-dark-begie);
+  color: var(--color-begie-font);
 }
 
 #home {
@@ -149,7 +154,7 @@ p {
 
 .home__title,
 .home__description {
-  color: var(--color-dark-white);
+  color: var(--color-dark-begie);
 }
 
 .home__contact {
@@ -157,7 +162,75 @@ p {
   font-weight: var(--weight-bold);
   margin: 24px;
   padding: 8px 8px;
-  border: 2px solid var(--color-dark-white);
+  border: 2px solid var(--color-dark-begie);
   border-radius: var(--size-border-radius);
-  color: var(--color-dark-white);
+  color: var(--color-dark-begie);
+}
+
+.section {
+  text-align: center;
+  padding: 50px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* About */
+.about__majors {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 80px 0;
+}
+.major__icon {
+  width: 170px;
+  height: 170px;
+  font-size: 80px;
+  line-height: 170px;
+  border: 1px solid var(--color-blue);
+  border-radius: 50%;
+  color: var(--color-blue);
+  margin-bottom: 16px;
+}
+
+.major__icon:hover i {
+  color: var(--color-pink);
+  transform: rotate(-25deg) scale(1.2);
+  transition: all var(--animation-duration);
+}
+
+.major__title,
+.major__description {
+  color: var(--color-dark-grey);
+}
+
+.major__description {
+  font-size: var(--font-small);
+}
+
+.job {
+  display: flex;
+  align-items: center;
+}
+
+.job__logo {
+  width: 80px;
+  height: auto;
+  opacity: 70%;
+}
+
+.job__description {
+  margin: 0 16px;
+  text-align: left;
+}
+
+.job__name,
+.job__period {
+  color: var(--color-light-grey);
+}
+
+.job__name {
+  font-size: var(--font-small);
+}
+
+.job__period {
+  font-size: var(--font-micro);
 }

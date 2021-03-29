@@ -39,33 +39,63 @@
         <button class="home__contact">CONTACT ME</button>
     </section>
     <!-- About -->
-    <section id="about">
+    <section id="about" class="section">
         <h1>About Me</h1>
-        <p>저는 악성코드 분석으로 정보보안을 접하면서 IT계에 들어았습니다.<br>
-            하지만 개발자라는 창조정신이 건드려 꿈을 꾸게 되었고,<br>
+        <p>저는 악성코드 분석으로 정보보안을 접하면서 IT계에 들어았습니다.
+            하지만 개발자라는 창조정신이 건드려 꿈을 꾸게 되었고,
             현재 풀스택개발자가 되기위한 독학을 하고 있습니다.</p>
         <div class="about__majors">
-            <div class="major__icon"></div>
-            <div class="major__title"></div>
-            <div class="major__description"></div>
+            <div class="major">
+                <div class="major__icon"><i class="fab fa-html5"></i></div>
+                <h2 class="major__title">Front-end</h2>
+                <div class="major__description">HTML, CSS, JavaScript</div>
+            </div>
+            <div class="major">
+                <div class="major__icon"><i class="fas fa-server"></i></div>
+                <h2 class="major__title">Back-end</h2>
+                <div class="major__description">NodeJS, MySQL</div>
+            </div>
+            <div class="major">
+                <div class="major__icon"><i class="fas fa-search"></i></div>
+                <h2 class="major__title">Malware Analysis</h2>
+                <div class="major__description">File Analysis</div>
+            </div>
         </div>
         <div class="about__jobs">
             <div class="job">
                 <img src="/img/job/job_logo.png" alt="pago" class="job__logo">
-                <p class="job__name">PAGO Networks_악성코드 분석연구원</p>
-                <p class="job__period">2019.03~2020.10</p>
+                <div class="job__description">
+                    <p class="job__name">PAGO Networks_악성코드 분석연구원</p>
+                    <p class="job__period">2019.03~2020.10</p>
+                </div>
+            </div>
+            <div class="job">
+                <img src="/img/job/job_logo.png" alt="pago" class="job__logo">
+                <div class="job__description">
+                    <p class="job__name">PAGO Networks_악성코드 분석연구원</p>
+                    <p class="job__period">2019.03~2020.10</p>
+                </div>
             </div>
         </div>
     </section>
     <!-- Skill -->
-    <section id="skill">
+    <section id="skill" class="section">
         <h1>Skills</h1>
         <h2>Skills & Attributes</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis perspiciatis suscipit placeat fugit? Voluptates cum nostrum temporibus, aperiam recusandae, sit in eos consequuntur exercitationem, iure ab. Eius aliquam debitis odit.
-        Dolorem corrupti ea officia obcaecati perferendis voluptas quis odio excepturi? Odit facilis voluptatibus quisquam itaque totam, aspernatur qui maxime cumque, ipsum eligendi animi voluptatem eveniet facere quae consequatur doloribus iusto.
-        Error vero magnam optio magni iure quidem doloribus ipsum illo in dolorem quaerat quam vel ab reiciendis tenetur ut distinctio, facilis tempore laudantium laboriosam delectus aut molestiae! Eum, doloremque natus.
-        Impedit, ex! Doloremque, consequatur. Minus ipsam, placeat et accusamus voluptas laborum quisquam! Totam modi at quae illo vitae perspiciatis fuga asperiores nulla consequuntur est aliquid, voluptatem, eligendi a quo provident.
-        Earum quia cum vel doloribus delectus fuga voluptates quis, aliquid placeat, pariatur harum assumenda culpa itaque ducimus molestias illo eius praesentium explicabo animi quo nesciunt nostrum! Illo eius ducimus a.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis perspiciatis suscipit placeat fugit?
+            Voluptates cum nostrum temporibus, aperiam recusandae, sit in eos consequuntur exercitationem, iure ab. Eius
+            aliquam debitis odit.
+            Dolorem corrupti ea officia obcaecati perferendis voluptas quis odio excepturi? Odit facilis voluptatibus
+            quisquam itaque totam, aspernatur qui maxime cumque, ipsum eligendi animi voluptatem eveniet facere quae
+            consequatur doloribus iusto.
+            Error vero magnam optio magni iure quidem doloribus ipsum illo in dolorem quaerat quam vel ab reiciendis
+            tenetur ut distinctio, facilis tempore laudantium laboriosam delectus aut molestiae! Eum, doloremque natus.
+            Impedit, ex! Doloremque, consequatur. Minus ipsam, placeat et accusamus voluptas laborum quisquam! Totam
+            modi at quae illo vitae perspiciatis fuga asperiores nulla consequuntur est aliquid, voluptatem, eligendi a
+            quo provident.
+            Earum quia cum vel doloribus delectus fuga voluptates quis, aliquid placeat, pariatur harum assumenda culpa
+            itaque ducimus molestias illo eius praesentium explicabo animi quo nesciunt nostrum! Illo eius ducimus a.
+        </p>
         <div class="skillSet">
             <div class="skillSet__left">
                 <h3 class="skillset__title">Skills</h3>
@@ -140,7 +170,7 @@
         </div>
     </section>
     <!-- Work -->
-    <section id="work">
+    <section id="work" class="section">
         <h1>My work</h1>
         <h3>project</h3>
         <div class="work__categories">
@@ -165,34 +195,38 @@
         </div>
     </section>
     <!-- Testimonials -->
-    <section id="testimonials">
+    <section id="testimonials" class="section">
         <h1>Testimonials</h1>
         <h3>See what they say about me</h3>
         <div class="testimonials">
             <img src="./img/testimonials/people1-200515-154332.jpeg" alt="People" class="testimonials__avatar">
             <div class="testimonials__speech-bouble">
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Exercitationem veritatis tempora quo consectetur amet enim esse, hic nisi praesentium iusto laboriosam libero beatae id quae maxime deserunt, incidunt deleniti fugit!</p>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Exercitationem veritatis tempora quo
+                    consectetur amet enim esse, hic nisi praesentium iusto laboriosam libero beatae id quae maxime
+                    deserunt, incidunt deleniti fugit!</p>
                 <p class="name"><a href="#">Ali</a> / PAGO</p>
             </div>
         </div>
         <div class="testimonials">
             <img src="./img/testimonials/people1-200515-154332.jpeg" alt="People" class="testimonials__avatar">
             <div class="testimonials__speech-bouble">
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Exercitationem veritatis tempora quo consectetur amet enim esse, hic nisi praesentium iusto laboriosam libero beatae id quae maxime deserunt, incidunt deleniti fugit!</p>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Exercitationem veritatis tempora quo
+                    consectetur amet enim esse, hic nisi praesentium iusto laboriosam libero beatae id quae maxime
+                    deserunt, incidunt deleniti fugit!</p>
                 <p class="name"><a href="#">Ali</a> / PAGO</p>
             </div>
         </div>
     </section>
     <!-- Contact -->
-    <section id="contact">
+    <section id="contact" class="section">
         <h1 class="contact__title">Let's talk</h1>
         <h2 class="contact__email">wakebro119@naver.com</h2>
         <div class="contact__links">
             <a href="#" target="__blank">
-                
+
             </a>
             <a href="#" target="__blank">
-                
+
             </a>
         </div>
         <p class="contact__rights">2021 Ali's Portfolio - All rights reserved</p>

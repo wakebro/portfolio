@@ -13,12 +13,20 @@ document.addEventListener("scroll", () => {
 
 // Handle scrolling when tapping on the navbar menu
 const navbarMenu = document.querySelector(".navbar__menu");
-// const location = document.querySelector("#home").offsetTop;
 navbarMenu.addEventListener("click", (event) => {
   const target = event.target;
   const link = target.dataset.link;
   if (link == null) return;
-  console.log(event.target.dataset.link);
-  const scrollTarget = document.getElementById(link);
-  scrollTarget.scrollIntoView({ behavior: "smooth" });
+  scrollIntoView(link);
 });
+
+// Handle scrolling when tapping on the contact button of home
+const contactBtn = document.querySelector(".home__contact");
+contactBtn.addEventListener("click", () => {
+  scrollIntoView("#contact");
+});
+
+function scrollIntoView(selector) {
+  const scrollTo = document.querySelector(selector);
+  scrollTo.scrollIntoView({ behavior: "smooth" });
+}

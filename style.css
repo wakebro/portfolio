@@ -160,6 +160,11 @@ p {
   padding: 40px;
   padding-top: 120px;
   text-align: center;
+  transition: all var(--animation-duration) ease-in-out;
+}
+
+#home.home--fadeout {
+  opacity: 0;
 }
 
 .home__mainAvarta {

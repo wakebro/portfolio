@@ -33,6 +33,17 @@ document.addEventListener("scroll", () => {
   home.style.opacity = 1 - window.scrollY / homeheight;
 });
 
+// Make arrow to move the top
+const arrow = document.querySelector("#arrowBtn");
+document.addEventListener("scroll", () => {
+  if (window.scrollY > navbarHeight) {
+    arrow.style.display = "block";
+  } else arrow.style.display = "none";
+});
+arrow.addEventListener("click", (event) => {
+  scrollIntoView("#home");
+});
+
 function scrollIntoView(selector) {
   const scrollTo = document.querySelector(selector);
   scrollTo.scrollIntoView({ behavior: "smooth" });

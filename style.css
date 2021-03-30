@@ -100,16 +100,15 @@ p {
   width: 100%;
   display: flex;
   justify-content: space-between;
-  background-color:transparent;
+  background-color: transparent;
   align-items: center;
   color: var(--color-dark-begie);
-  padding: 16px;
   transition: all var(--animation-duration) ease-in-out;
+  z-index: 1;
 }
 
-#navbar.navbar--dark{
-    background-color:var(--color-light-begie);
-    padding: 8px;
+#navbar.navbar--dark {
+  background-color: var(--color-light-begie);
 }
 
 .navbar__menu {
@@ -489,7 +488,7 @@ p {
     align-items: flex-start;
   }
   .navbar__menu {
-    flex-directi on: column;
+    flex-direction: column;
     text-align: center;
     width: 100%;
     display: none;

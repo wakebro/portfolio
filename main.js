@@ -17,7 +17,14 @@ navbarMenu.addEventListener("click", (event) => {
   const target = event.target;
   const link = target.dataset.link;
   if (link == null) return;
+  navbarMenu.classList.remove("open");
   scrollIntoView(link);
+});
+
+// Navbar toggle button for small screen
+const navbarToggleBtn = document.querySelector(".navbar__toggle-btn");
+navbarToggleBtn.addEventListener("click", (event) => {
+  navbarMenu.classList.toggle("open");
 });
 
 // Handle scrolling when tapping on the contact button of home

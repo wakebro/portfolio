@@ -4,7 +4,7 @@
 const navbar = document.querySelector("#navbar");
 const navbarHeight = navbar.getBoundingClientRect().height;
 document.addEventListener("scroll", () => {
-  if (window.scrollY > navbarHeight - 50) {
+  if (window.scrollY > navbarHeight) {
     navbar.classList.add("navbar--dark");
   } else {
     navbar.classList.remove("navbar--dark");
@@ -78,7 +78,74 @@ workBtnContainer.addEventListener("click", (event) => {
   }, 300);
 });
 
+// 인터섹션 옵저버로 모든 섹션들의 진입과 나가는 것을 관찰
+// 1. 모든 섹션 요소들과 메뉴아이템들을 가지고 온다
+// 2. 인터섹션 옵저버를 이용하여 모든 섹션들을 관찰한다
+// 3. 두번째를 이용해서 관찰된 우리가 보여지는 섹션의 해당하는 메뉴 아이템을 활성화시킨다
+
+// 1. 모든 섹션 요소들과 메뉴아이템들을 가지고 온다
+const sectionIds = [
+  "#home",
+  "#about",
+  "#skill",
+  "#work",
+  "#testimonials",
+  "#contact",
+];
+
+const sections = sectionIds.map((id) => document.querySelector(id));
+const navItems = sectionIds.map((id) =>
+  document.querySelector(`[data-link="${id}"]`)
+);
+
+let selectedNavIndex = 0;
+let selectedNavItem = navItems[0];
+function selectNavItem(selected) {
+  selectedNavItem.classList.remove("active");
+  selectedNavItem = selected;
+  selectedNavItem.classList.add("active");
+}
+
 function scrollIntoView(selector) {
   const scrollTo = document.querySelector(selector);
   scrollTo.scrollIntoView({ behavior: "smooth" });
+  selectNavItem(navItems[sectionIds.indexOf(selector)]);
 }
+
+// 2. 인터섹션 옵저버를 이용하여 모든 섹션들을 관찰한다
+const observerOptions = {
+  root: null,
+  rootMargin: "0px",
+  threshold: 0.3,
+};
+
+const observerCallback = (entries, observer) => {
+  entries.forEach((entry) => {
+    if (!entry.isIntersecting && entry.intersectionRatio > 0) {
+      const index = sectionIds.indexOf(`#${entry.target.id}`);
+      // 스크롤이 아래로 되어서 페이지가 올라옴
+      if (entry.boundingClientRect.y < 0) {
+        selectedNavIndex = index + 1;
+      } else {
+        // 스크롤이 위로 되어서 페이지가 내려옴
+        selectedNavIndex = index - 1;
+      }
+    }
+  });
+};
+
+const observer = new IntersectionObserver(observerCallback, observerOptions);
+sections.forEach((section) => observer.observe(section));
+
+window.addEventListener("wheel", () => {
+  if (window.scrollY === 0) {
+    selectedNavIndex = 0;
+  } else if (
+    Math.round(
+      window.scrollY + window.innerHeight >= document.body.clientHeight
+    )
+  ) {
+    selectedNavIndex = navItems.length - 1;
+  }
+  selectNavItem(navItems[selectedNavIndex]);
+});
